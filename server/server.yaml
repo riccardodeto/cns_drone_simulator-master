@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avnet-backend
+spec:
+  selector:
+    matchLabels:
+      app: avnet-backend
+  template:
+    metadata:
+      labels:
+        app: avnet-backend
+    spec:
+      containers:
+        - name: avnet-backend
+          image: vannisil/avnet-backend
+          ports:
+            - containerPort: 5000
